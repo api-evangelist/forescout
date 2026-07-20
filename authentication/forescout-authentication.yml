@@ -1,0 +1,55 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.forescout.com/bundle/web-api-1-5-3-h/page/web-api-1-5-3-h.RESTful-Web-Service-Interaction.html
+docs:
+- https://docs.forescout.com/bundle/web-api-1-5-3-h/
+- https://docs.forescout.com/bundle/eyeinspect_api_guide_v5_5_0/
+- https://github.com/Forescout/examples
+summary:
+  types:
+  - http
+  http_schemes:
+  - bearer
+  - basic
+  notes: >-
+    Forescout appliances are customer-hosted, so there is no single public base
+    host; each API is reached at the customer's Enterprise Manager, eyeInspect
+    Command Center, or appliance address over HTTPS.
+schemes:
+- name: WebApiLogin
+  api: Forescout Web API (Open Integration Module)
+  type: http
+  scheme: basic
+  flow: >-
+    Obtain a session token by POSTing to /api/login with the DEX/Web API service
+    account credentials (HTTP Basic). The response returns a JWT session token.
+  login_endpoint: POST /api/login
+  source: https://github.com/Forescout/examples/tree/master/web-api
+- name: WebApiBearer
+  api: Forescout Web API (Open Integration Module)
+  type: http
+  scheme: bearer
+  bearer_format: JWT
+  header: Authorization
+  flow: >-
+    Pass the JWT returned by /api/login in the Authorization header on all
+    subsequent Web API requests (e.g. GET /api/hosts, GET /api/policies,
+    GET /api/hostfields). Tokens expire and must be refreshed via /api/login.
+  source: https://github.com/Forescout/examples/tree/master/web-api/postman
+- name: EyeInspectBasic
+  api: Forescout eyeInspect Command Center REST API
+  type: http
+  scheme: basic
+  flow: >-
+    Authenticate to the eyeInspect Command Center REST API with the Command
+    Center username and password (HTTP Basic) over HTTPS. Access requires an
+    eyeExtend / eyeInspect license.
+  source: https://docs.forescout.com/bundle/eyeinspect_api_guide_v5_5_0/
+- name: AdminApiBasic
+  api: Forescout eyeSight Admin API
+  type: http
+  scheme: basic
+  flow: >-
+    The eyeSight Admin API plugin authenticates with Forescout console
+    credentials; see the admin-switch-api examples and Postman collection.
+  source: https://github.com/Forescout/examples/tree/master/admin-switch-api
