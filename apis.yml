@@ -1,8 +1,17 @@
 aid: forescout
 name: Forescout
-description: 'Forescout is a company surfaced as a portfolio company of accel and added to the API Evangelist
-  network as a stub for enrichment. Sector: cybersecurity. This profile is a lead awaiting the enrichment
-  pipeline.'
+description: >-
+  Forescout Technologies is a cybersecurity company specializing in automated
+  cybersecurity for device visibility, control, and compliance across IT, OT/ICS,
+  IoT, and IoMT environments. The Forescout Platform (eyeSight, eyeControl,
+  eyeInspect, eyeExtend, and Risk & Exposure Management) discovers, classifies,
+  assesses, and secures every connected asset on the network without requiring
+  agents. Forescout exposes REST APIs for external integration through the Open
+  Integration Module (OIM) of eyeExtend Connect — the Web API and Data Exchange
+  (DEX) plugins — plus the eyeSight Admin API and the eyeInspect Command Center
+  REST API, giving programmatic access to host inventory, network policies,
+  alerts, and vulnerability data. First-party integration example code (Python,
+  Node, and Postman collections) is published in the Forescout GitHub org.
 url: https://raw.githubusercontent.com/api-evangelist/forescout/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -10,13 +19,81 @@ x-backed-by:
 - accel
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://www.forescout.com/wp-content/uploads/2021/09/forescout-logo.png
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
 tags:
 - Company
 - Cybersecurity
-apis: []
+- Network Security
+- Device Visibility
+- Asset Inventory
+- OT Security
+- IoT Security
+- Vulnerability Management
+- Zero Trust
+- REST API
+apis:
+- name: Forescout Web API (Open Integration Module)
+  description: >-
+    The Web API plugin of the Forescout eyeExtend Connect Open Integration
+    Module lets external systems query and act on the Forescout platform over
+    HTTP. Clients authenticate at POST /api/login and pass the returned JWT in
+    the Authorization header on subsequent requests to endpoints such as
+    /api/hosts, /api/policies, and /api/hostfields.
+  humanURL: https://docs.forescout.com/bundle/web-api-1-5-3-h/page/web-api-1-5-3-h.RESTful-Web-Service-Interaction.html
+  baseURL: https://your-forescout-appliance/api
+  tags:
+  - Device Visibility
+  - Asset Inventory
+  - Network Policy
+  properties:
+  - type: Documentation
+    url: https://docs.forescout.com/bundle/web-api-1-5-3-h/
+  - type: Authentication
+    url: authentication/forescout-authentication.yml
+  - type: Postman
+    url: https://github.com/Forescout/examples/tree/master/web-api/postman
+- name: Forescout eyeInspect Command Center REST API
+  description: >-
+    REST API for the eyeInspect (SilentDefense) OT/ICS Command Center, providing
+    access to asset inventory (hosts), alerts, vulnerabilities, sensors, and
+    blacklists. Uses HTTP basic authentication against the Command Center server.
+  humanURL: https://docs.forescout.com/bundle/eyeinspect_api_guide_v5_5_0/page/gitdoc-eyeinspect/eyeInspect/eyeinspect_api_guide/about_eyeinspect_api.html
+  baseURL: https://your-eyeinspect-cc/api
+  tags:
+  - OT Security
+  - Asset Inventory
+  - Vulnerability Management
+  properties:
+  - type: Documentation
+    url: https://docs.forescout.com/bundle/eyeinspect_api_guide_v5_5_0/
+- name: Forescout eyeSight Admin API
+  description: >-
+    Administrative REST API plugin for the Forescout eyeSight platform, used to
+    manage appliance configuration and switch/device administration surfaced in
+    the Forescout examples repository (admin-switch-api).
+  humanURL: https://docs.forescout.com/bundle/admin-api-1-0-h/
+  baseURL: https://your-forescout-appliance/api
+  tags:
+  - Administration
+  - Network Security
+  properties:
+  - type: Documentation
+    url: https://docs.forescout.com/bundle/admin-api-1-0-h/
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -24,4 +101,41 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
-  url: http://www.forescout.com
+  url: https://www.forescout.com
+- type: DeveloperPortal
+  url: https://docs.forescout.com/
+- type: Documentation
+  url: https://docs.forescout.com/
+- type: APIReference
+  url: https://docs.forescout.com/bundle/web-api-1-5-3-h/page/web-api-1-5-3-h.RESTful-Web-Service-Interaction.html
+- type: Blog
+  url: https://www.forescout.com/blog/
+- type: GitHubOrganization
+  url: https://github.com/Forescout
+- type: Postman
+  url: https://github.com/Forescout/examples/tree/master/web-api/postman
+- type: Marketplace
+  url: https://marketplace.forescout.com/
+- type: TermsOfService
+  url: https://www.forescout.com/terms-of-use/
+- type: PrivacyPolicy
+  url: https://www.forescout.com/privacy-policy/
+- type: Authentication
+  url: authentication/forescout-authentication.yml
+- type: Conventions
+  url: conventions/forescout-conventions.yml
+- type: Conformance
+  url: conformance/forescout-conformance.yml
+- type: DomainSecurity
+  url: security/forescout-domain-security.yml
+- type: MCPServer
+  url: mcp/forescout-mcp.yml
+- type: LLMsTxt
+  url: llms/forescout-llms.txt
+- type: Lifecycle
+  url: lifecycle/forescout-lifecycle.yml
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

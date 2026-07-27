@@ -1,0 +1,52 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.forescout.com/bundle/web-api-1-5-3-h/page/web-api-1-5-3-h.RESTful-Web-Service-Interaction.html
+docs:
+- https://docs.forescout.com/bundle/web-api-1-5-3-h/
+- https://github.com/Forescout/examples/tree/master/web-api
+summary: >-
+  Cross-cutting request/response conventions for the Forescout Web API (Open
+  Integration Module) and related REST surfaces, captured from the documentation
+  and first-party example code. Forescout appliances are customer-hosted; there
+  is no shared public base host.
+conventions:
+  transport: HTTPS to the customer's Enterprise Manager / appliance
+  base_path: /api
+  authentication:
+    style: >-
+      Login at POST /api/login (HTTP Basic with the Web API service account) to
+      obtain a JWT, then send it in the Authorization header on every request.
+    ref: authentication/forescout-authentication.yml
+  content_type:
+    request: application/x-www-form-urlencoded
+    response: application/json
+  resource_endpoints:
+  - GET /api/hosts
+  - GET /api/hosts/ip/{ip}
+  - GET /api/hosts/?matchRuleId={ruleId}
+  - GET /api/hostfields/
+  - GET /api/policies
+  filtering:
+    style: query-parameters
+    notes: >-
+      Host queries support filters such as matchRuleId and host property filters
+      (e.g. va_netfunc) as query parameters on /api/hosts.
+  pagination:
+    documented: false
+    notes: Not documented in the Web API RESTful interaction reference.
+  idempotency:
+    documented: false
+    notes: >-
+      No idempotency-key contract is documented; the Web API query surface is
+      predominantly read (GET) operations.
+  versioning:
+    scheme: plugin-bundle-version
+    notes: >-
+      Each API is versioned by its eyeExtend Connect plugin / documentation
+      bundle (e.g. web-api-1-5-3, eyeinspect_api_guide_v5_5_0, admin-api-1-0),
+      not by a URI/header API version segment.
+  error_envelope:
+    ref: conformance/forescout-conformance.yml
+    notes: Errors returned as HTTP status codes with JSON bodies; no RFC 9457 usage observed.
+  rate_limiting:
+    documented: false

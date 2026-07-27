@@ -1,0 +1,33 @@
+generated: '2026-07-19'
+method: derived
+status: candidate
+source: >-
+  Derived from the documented Forescout Web API (Open Integration Module)
+  endpoints and the first-party Postman collection at
+  https://github.com/Forescout/examples/tree/master/web-api/postman
+notes: >-
+  No official hosted/remote Forescout MCP server was found. This is a candidate
+  tool list derived from real, documented Web API operations to seed a future
+  server; it is not published by Forescout.
+server:
+  name: forescout-web-api
+  transport: http
+tools:
+- name: login
+  description: Authenticate to the Web API and obtain a JWT session token.
+  source_operation: POST /api/login
+- name: list_hosts
+  description: List hosts (assets) known to the Forescout platform.
+  source_operation: GET /api/hosts
+- name: get_host_by_ip
+  description: Retrieve a single host by IP address.
+  source_operation: GET /api/hosts/ip/{ip}
+- name: list_hosts_by_rule
+  description: List hosts matching a policy rule id.
+  source_operation: GET /api/hosts/?matchRuleId={ruleId}
+- name: list_host_fields
+  description: List available host property fields.
+  source_operation: GET /api/hostfields/
+- name: list_policies
+  description: List Forescout policies.
+  source_operation: GET /api/policies

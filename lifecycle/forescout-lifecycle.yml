@@ -1,0 +1,26 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.forescout.com/
+docs:
+- https://docs.forescout.com/
+versioning:
+  scheme: plugin-bundle-version
+  notes: >-
+    Each Forescout API is delivered and versioned as an eyeExtend Connect plugin
+    with its own documentation bundle (e.g. web-api-1-5-3, admin-api-1-0,
+    eyeinspect_api_guide_v5_5_0). There is no single URI/header API version.
+  examples:
+  - web-api-1-5-3
+  - admin-api-1-0
+  - eyeinspect_api_guide_v5_5_0
+  - dex-3-9-4
+deprecation:
+  policy_url: null
+  sunset_header: false
+  notes: No public deprecation policy or RFC 8594 Sunset/Deprecation header support was found.
+sla:
+  url: null
+status_page: null
+notes: >-
+  No public status page or SLA page was located for the customer-hosted
+  Forescout appliance APIs.

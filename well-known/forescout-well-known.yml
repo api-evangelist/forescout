@@ -1,0 +1,23 @@
+generated: '2026-07-19'
+method: searched
+host: https://www.forescout.com
+notes: >-
+  No .well-known discovery documents were served. The corporate site returns 403
+  to automated requests for /.well-known/* and the documentation host returns 404.
+  Absence recorded as valid data.
+documents:
+- path: /.well-known/security.txt
+  host: https://www.forescout.com
+  status: 403
+- path: /.well-known/security.txt
+  host: https://docs.forescout.com
+  status: 404
+- path: /.well-known/ai-plugin.json
+  host: https://www.forescout.com
+  status: 403
+- path: /.well-known/api-catalog
+  host: https://docs.forescout.com
+  status: 404
+- path: /.well-known/openid-configuration
+  host: https://www.forescout.com
+  status: 403

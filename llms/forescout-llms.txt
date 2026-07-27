@@ -1,0 +1,38 @@
+# Forescout
+
+> Forescout Technologies is a cybersecurity company providing automated, agentless device visibility, control, and compliance across IT, OT/ICS, IoT, and IoMT environments. It exposes REST APIs for external integration through the Open Integration Module (Web API and Data Exchange plugins), the eyeSight Admin API, and the eyeInspect Command Center REST API.
+
+## APIs
+
+- [Forescout Web API (Open Integration Module)](https://docs.forescout.com/bundle/web-api-1-5-3-h/page/web-api-1-5-3-h.RESTful-Web-Service-Interaction.html): HTTP query/action API over the Forescout platform; JWT login at POST /api/login, then Authorization header on /api/hosts, /api/policies, /api/hostfields.
+- [Forescout eyeInspect Command Center REST API](https://docs.forescout.com/bundle/eyeinspect_api_guide_v5_5_0/): OT/ICS asset inventory, alerts, vulnerabilities, and sensors; HTTP Basic auth.
+- [Forescout eyeSight Admin API](https://docs.forescout.com/bundle/admin-api-1-0-h/): administrative/switch API plugin for the eyeSight platform.
+
+## Docs
+
+- [Forescout Documentation Portal](https://docs.forescout.com/)
+- [Web API RESTful Web Service Interaction](https://docs.forescout.com/bundle/web-api-1-5-3-h/page/web-api-1-5-3-h.RESTful-Web-Service-Interaction.html)
+- [eyeInspect API Guide](https://docs.forescout.com/bundle/eyeinspect_api_guide_v5_5_0/)
+
+## Examples
+
+- [Forescout examples (GitHub)](https://github.com/Forescout/examples): first-party Python, Node, and Postman examples for web-api, dex, admin-switch-api, and syslog.
+- [Web API Postman collection](https://github.com/Forescout/examples/tree/master/web-api/postman)
+
+## Artifacts
+
+- Authentication: authentication/forescout-authentication.yml
+- Conventions: conventions/forescout-conventions.yml
+- Conformance: conformance/forescout-conformance.yml
+- Lifecycle: lifecycle/forescout-lifecycle.yml
+- MCP (candidate): mcp/forescout-mcp.yml
+- Domain security: security/forescout-domain-security.yml
+
+## Company
+
+- [Website](https://www.forescout.com)
+- [Blog](https://www.forescout.com/blog/)
+- [Marketplace](https://marketplace.forescout.com/)
+- [GitHub](https://github.com/Forescout)
+- [Terms of Use](https://www.forescout.com/terms-of-use/)
+- [Privacy Policy](https://www.forescout.com/privacy-policy/)

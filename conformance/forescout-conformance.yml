@@ -1,0 +1,30 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.forescout.com/bundle/web-api-1-5-3-h/
+docs:
+- https://docs.forescout.com/bundle/web-api-1-5-3-h/page/web-api-1-5-3-h.RESTful-Web-Service-Interaction.html
+- https://docs.forescout.com/bundle/eyeinspect_api_guide_v5_5_0/
+standards:
+- id: rest
+  conforms: true
+  evidence: HTTP verb + resource-path REST design (/api/hosts, /api/policies) with JSON responses
+- id: jwt
+  conforms: true
+  evidence: Web API /api/login issues a JWT bearer token used on subsequent requests
+- id: http-basic
+  conforms: true
+  evidence: eyeInspect Command Center API and Web API login use HTTP Basic authentication
+- id: oauth2
+  conforms: false
+  evidence: No OAuth2 authorization server / scopes documented for the REST APIs
+- id: oidc
+  conforms: false
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: No application/problem+json usage observed in the documented error responses
+- id: fapi
+  conforms: false
+- id: scim
+  conforms: false
+- id: odata
+  conforms: false
