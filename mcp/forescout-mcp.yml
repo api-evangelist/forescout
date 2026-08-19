@@ -1,14 +1,10 @@
 generated: '2026-07-19'
 method: derived
 status: candidate
-source: >-
-  Derived from the documented Forescout Web API (Open Integration Module)
-  endpoints and the first-party Postman collection at
-  https://github.com/Forescout/examples/tree/master/web-api/postman
-notes: >-
-  No official hosted/remote Forescout MCP server was found. This is a candidate
-  tool list derived from real, documented Web API operations to seed a future
-  server; it is not published by Forescout.
+source: Derived from the documented Forescout Web API (Open Integration Module) endpoints and the first-party
+  Postman collection at https://github.com/Forescout/examples/tree/master/web-api/postman
+notes: No official hosted/remote Forescout MCP server was found. This is a candidate tool list derived
+  from real, documented Web API operations to seed a future server; it is not published by Forescout.
 server:
   name: forescout-web-api
   transport: http
@@ -31,3 +27,9 @@ tools:
 - name: list_policies
   description: List Forescout policies.
   source_operation: GET /api/policies
+deployment:
+  mode: none
+  verified: derived
+  tools: 6
+  checked: '2026-08-12'
+  source: catalog MCP census
