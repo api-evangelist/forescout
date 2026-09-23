@@ -1,23 +1,23 @@
 generated: '2026-07-19'
 method: searched
 host: https://www.forescout.com
-notes: >-
-  No .well-known discovery documents were served. The corporate site returns 403
-  to automated requests for /.well-known/* and the documentation host returns 404.
-  Absence recorded as valid data.
-documents:
-- path: /.well-known/security.txt
-  host: https://www.forescout.com
-  status: 403
-- path: /.well-known/security.txt
-  host: https://docs.forescout.com
-  status: 404
-- path: /.well-known/ai-plugin.json
-  host: https://www.forescout.com
-  status: 403
-- path: /.well-known/api-catalog
-  host: https://docs.forescout.com
-  status: 404
-- path: /.well-known/openid-configuration
-  host: https://www.forescout.com
-  status: 403
+notes: No .well-known discovery documents were served. The corporate site returns 403 to automated requests
+  for /.well-known/* and the documentation host returns 404. Absence recorded as valid data.
+hosts:
+- host: https://www.forescout.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 403
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 403
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 403
+x-shape-fix:
+  converted: '2026-08-20'
+  from: documents
+  note: Rewritten into hosts[] -> documents[], the only shape well_known_docs() in score.rb reads. A served
+    .well-known surface recorded in any other shape scores as absent.
