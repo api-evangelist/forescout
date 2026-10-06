@@ -46,7 +46,7 @@ accessModel:
 image: https://www.forescout.com/wp-content/uploads/2021/09/forescout-logo.png
 specificationVersion: '0.23'
 created: '2026-07-17'
-modified: '2026-07-19'
+modified: '2026-10-06'
 tags:
 - Company
 - Cybersecurity
@@ -112,6 +112,8 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- url: https://www.forescout.com/feed/
+  type: BlogRSS
 - type: Website
   url: https://www.forescout.com
 - type: DeveloperPortal
