@@ -15,3 +15,28 @@
   relationship: distribution-channel
   status: not-a-workflow
   arazzo: null
+- slug: forescout-crowdstrike-own
+  label: CrowdStrike (own)
+  partner: crowdstrike
+  partner_name: CrowdStrike (own)
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.crowdstrike.com/listings/forescout-eyeextend/
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: forescout-microsoft-sentinel-own
+  label: Microsoft Sentinel (own)
+  partner: microsoft-sentinel
+  partner_name: Microsoft Sentinel (own)
+  category: Security - Network
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://github.com/Azure/Azure-Sentinel/tree/master/Solutions/Forescout%20eyeInspect%20for%20OT%20Security
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
